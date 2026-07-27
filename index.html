@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://api.counterapi.dev">
+    <link rel="dns-prefetch" href="https://api.counterapi.dev">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0b0f">
+    <meta name="description" content="Free daily horoscope — read today's astrology forecast for all 12 zodiac signs. Love, career, health, lucky numbers, and daily ratings. Updated every day, no signup.">
+    <meta name="keywords" content="daily horoscope, today horoscope, zodiac signs, astrology, horoscope reading, love horoscope, career horoscope, lucky numbers, aries horoscope, taurus horoscope, gemini horoscope, cancer horoscope, leo horoscope, virgo horoscope, libra horoscope, scorpio horoscope, sagittarius horoscope, capricorn horoscope, aquarius horoscope, pisces horoscope">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jimmywithfiona.com/daily-horoscope/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1840337371416691" crossorigin="anonymous"></script>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Daily Horoscope">
+    <meta property="og:title" content="Daily Horoscope — Today's Zodiac Forecast for All 12 Signs">
+    <meta property="og:description" content="Read today's horoscope for all 12 zodiac signs. Love, career, health, lucky numbers, and daily ratings. Free, updated daily.">
+    <meta property="og:url" content="https://jimmywithfiona.com/daily-horoscope/">
+    <meta property="og:image" content="https://jimmywithfiona.com/daily-horoscope/og.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Daily Horoscope — Today's Zodiac Forecast">
+    <meta name="twitter:description" content="Read today's horoscope for all 12 zodiac signs. Free, updated daily.">
+    <meta name="twitter:image" content="https://jimmywithfiona.com/daily-horoscope/og.png">
+    <title>Daily Horoscope — Today's Zodiac Forecast for All 12 Signs | Free</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"Daily Horoscope","url":"https://jimmywithfiona.com/daily-horoscope/","description":"Free daily horoscope for all 12 zodiac signs. Read today's astrology forecast including love, career, health, lucky numbers, and daily ratings.","applicationCategory":"LifestyleApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"How accurate are daily horoscopes?","acceptedAnswer":{"@type":"Answer","text":"Daily horoscopes provide general astrological guidance based on your sun sign. While many people find them insightful and entertaining, they are not scientifically proven predictions. Use them as daily inspiration and reflection rather than absolute truth."}},
+        {"@type":"Question","name":"When is the daily horoscope updated?","acceptedAnswer":{"@type":"Answer","text":"The daily horoscope updates every day at midnight UTC. Come back each morning for your fresh forecast covering love, career, health, and lucky numbers."}},
+        {"@type":"Question","name":"Which zodiac sign should I read?","acceptedAnswer":{"@type":"Answer","text":"Read your sun sign (based on your birth date). You can also read your rising sign (ascendant) and moon sign for additional perspectives. Many people check both their sign and their partner's sign for compatibility insights."}},
+        {"@type":"Question","name":"Is this daily horoscope free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. No signup, no download. Bookmark this page and check your horoscope every day."}}
+    ]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jimmywithfiona.com/"},{"@type":"ListItem","position":2,"name":"Daily Horoscope","item":"https://jimmywithfiona.com/daily-horoscope/"}]}
+    </script>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" href="/daily-horoscope/">♈ Daily Horoscope</a>
+    <div class="nav-links">
+        <a href="/daily-horoscope/" class="active">Horoscope</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+        <a href="/">🏠 Home</a>
+    </div>
+</nav>
+<main>
+    <h1>Daily Horoscope</h1>
+    <p class="subtitle">Today's astrology forecast for all 12 zodiac signs</p>
+    <div class="date-display" id="dateDisplay"></div>
+
+    <div class="zodiac-grid" id="zodiacGrid"></div>
+
+    <div class="reading" id="reading">
+        <div class="reading-header">
+            <div class="reading-symbol" id="rSymbol"></div>
+            <div>
+                <div class="reading-title" id="rTitle"></div>
+                <div class="reading-dates" id="rDates"></div>
+            </div>
+            <div class="reading-date">
+                <div class="label">Forecast for</div>
+                <div class="val" id="rDate"></div>
+            </div>
+        </div>
+
+        <div class="ratings">
+            <div class="rating-card"><div class="label">❤️ Love</div><div class="stars" id="rLove"></div><div class="score" id="rLoveScore"></div></div>
+            <div class="rating-card"><div class="label">💼 Career</div><div class="stars" id="rCareer"></div><div class="score" id="rCareerScore"></div></div>
+            <div class="rating-card"><div class="label">💰 Money</div><div class="stars" id="rMoney"></div><div class="score" id="rMoneyScore"></div></div>
+            <div class="rating-card"><div class="label">🏃 Health</div><div class="stars" id="rHealth"></div><div class="score" id="rHealthScore"></div></div>
+        </div>
+
+        <div class="reading-section">
+            <div class="section-title">✨ Overall</div>
+            <p id="rOverall"></p>
+        </div>
+        <div class="reading-section">
+            <div class="section-title">❤️ Love & Relationships</div>
+            <p id="rLoveText"></p>
+        </div>
+        <div class="reading-section">
+            <div class="section-title">💼 Career & Work</div>
+            <p id="rCareerText"></p>
+        </div>
+        <div class="reading-section">
+            <div class="section-title">💰 Finance</div>
+            <p id="rMoneyText"></p>
+        </div>
+        <div class="reading-section">
+            <div class="section-title">🏃 Health & Wellness</div>
+            <p id="rHealthText"></p>
+        </div>
+
+        <div class="lucky-grid">
+            <div class="lucky-item"><div class="label">🍀 Lucky Number</div><div class="value" id="rNumber"></div></div>
+            <div class="lucky-item"><div class="label">🎨 Lucky Color</div><div class="value" id="rColor"></div></div>
+            <div class="lucky-item"><div class="label">🧭 Lucky Direction</div><div class="value" id="rDirection"></div></div>
+            <div class="lucky-item"><div class="label">🤝 Best Match</div><div class="value" id="rMatch"></div></div>
+        </div>
+
+        <div class="share-row">
+            <button class="share-btn" onclick="shareReading()">📤 Share Horoscope</button>
+            <button class="share-btn" onclick="copyReading()">📋 Copy Text</button>
+        </div>
+    </div>
+
+    <div class="stats-footer">👁️ Views <strong id="pv">-</strong><span class="stat-divider">|</span>👤 Visitors <strong id="uv">-</strong></div>
+
+    <div class="seo-section">
+        <h2>Free Daily Horoscope</h2>
+        <p>Welcome to your free daily horoscope! Get personalized astrology readings for all 12 zodiac signs, updated every single day. Whether you're looking for guidance in love, career, money, or health, our daily horoscope provides insightful forecasts to help you navigate your day with confidence. Check back each morning for your fresh reading — it's 100% free, with no signup or download required.</p>
+        <h2>All 12 Zodiac Signs</h2>
+        <ul>
+            <li><strong>Aries</strong> (March 21 - April 19) — Bold, energetic, pioneering fire sign ruled by Mars</li>
+            <li><strong>Taurus</strong> (April 20 - May 20) — Reliable, patient, sensual earth sign ruled by Venus</li>
+            <li><strong>Gemini</strong> (May 21 - June 20) — Curious, adaptable, communicative air sign ruled by Mercury</li>
+            <li><strong>Cancer</strong> (June 21 - July 22) — Emotional, nurturing, intuitive water sign ruled by the Moon</li>
+            <li><strong>Leo</strong> (July 23 - August 22) — Confident, generous, charismatic fire sign ruled by the Sun</li>
+            <li><strong>Virgo</strong> (August 23 - September 22) — Analytical, practical, detail-oriented earth sign ruled by Mercury</li>
+            <li><strong>Libra</strong> (September 23 - October 22) — Diplomatic, charming, balanced air sign ruled by Venus</li>
+            <li><strong>Scorpio</strong> (October 23 - November 21) — Intense, passionate, mysterious water sign ruled by Pluto</li>
+            <li><strong>Sagittarius</strong> (November 22 - December 21) — Adventurous, optimistic, philosophical fire sign ruled by Jupiter</li>
+            <li><strong>Capricorn</strong> (December 22 - January 19) — Ambitious, disciplined, practical earth sign ruled by Saturn</li>
+            <li><strong>Aquarius</strong> (January 20 - February 18) — Independent, innovative, humanitarian air sign ruled by Uranus</li>
+            <li><strong>Pisces</strong> (February 19 - March 20) — Compassionate, artistic, intuitive water sign ruled by Neptune</li>
+        </ul>
+        <h2>What Your Daily Horoscope Includes</h2>
+        <p>Each daily reading provides a comprehensive forecast covering four key areas of your life. The <strong>Overall</strong> section gives you a general summary of the day's energy and what to expect. The <strong>Love & Relationships</strong> reading offers guidance on romance, friendships, and family dynamics. <strong>Career & Work</strong> predicts professional opportunities and challenges. <strong>Finance</strong> covers money matters and financial decisions. <strong>Health & Wellness</strong> advises on physical and mental well-being.</p>
+        <p>Additionally, each horoscope includes daily ratings (1-5 stars) for Love, Career, Money, and Health, so you can see at a glance which areas of life are favored today. You'll also find your lucky number, lucky color, lucky direction, and best zodiac match of the day.</p>
+        <h2>How Astrology Works</h2>
+        <p>Astrology is an ancient practice that studies the positions and movements of celestial bodies to gain insight into human affairs and earthly events. Your zodiac sign (also called sun sign) is determined by the position of the Sun at the time of your birth. Each sign is associated with specific personality traits, elemental energies (fire, earth, air, water), and ruling planets. Daily horoscopes analyze the current planetary positions relative to your sign to generate guidance for the day.</p>
+        <h2>Zodiac Compatibility</h2>
+        <p>Wondering if you're compatible with someone? Check both your sign and theirs! Generally, signs of the same element get along well: Fire signs (Aries, Leo, Sagittarius) share passion and energy; Earth signs (Taurus, Virgo, Capricorn) value stability and practicality; Air signs (Gemini, Libra, Aquarius) connect through intellect and communication; Water signs (Cancer, Scorpio, Pisces) bond through emotion and intuition. Opposite signs often attract, creating dynamic but challenging relationships.</p>
+        <h2>FAQ</h2>
+        <p><strong>When should I check my horoscope?</strong> — Check it each morning to set the tone for your day. The forecast updates at midnight UTC.</p>
+        <p><strong>Can I read other signs' horoscopes?</strong> — Absolutely! Many people read their partner's, friend's, or child's sign for relationship insights.</p>
+        <p><strong>What if I was born on a cusp?</strong> — If your birthday falls on the boundary between two signs, you may resonate with both. Read both horoscopes and see which feels more accurate.</p>
+        <p><strong>Are horoscopes scientifically proven?</strong> — No. Astrology is considered a pseudoscience. Treat horoscopes as entertainment and daily reflection, not as factual predictions.</p>
+    </div>
+</main>
+<footer>
+    <p><a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a> · <a href="/">Home</a></p>
+    <p style="margin-top:0.4rem;">Daily Horoscope © 2026 · Free daily zodiac forecast</p>
+    <div style="margin-top:0.6rem;font-size:0.72rem;opacity:0.6;">More: <a href="/wordle/">Wordle</a> · <a href="/fun-tests/">FunTests</a> · <a href="/pixel-art/">Pixel Art</a> · <a href="/minesweeper/">Minesweeper</a> · <a href="/word-counter/">Word Counter</a> · <a href="/age-calculator/">Age Calculator</a></div>
+</footer>
+<script src="js/counter.js" defer></script>
+<script>
+const ZODIAC = [
+    {id:"aries",name:"Aries",symbol:"♈",dates:"Mar 21 - Apr 19",element:"Fire",ruler:"Mars",compat:["leo","sagittarius","gemini","aquarius"]},
+    {id:"taurus",name:"Taurus",symbol:"♉",dates:"Apr 20 - May 20",element:"Earth",ruler:"Venus",compat:["virgo","capricorn","cancer","pisces"]},
+    {id:"gemini",name:"Gemini",symbol:"♊",dates:"May 21 - Jun 20",element:"Air",ruler:"Mercury",compat:["libra","aquarius","aries","leo"]},
+    {id:"cancer",name:"Cancer",symbol:"♋",dates:"Jun 21 - Jul 22",element:"Water",ruler:"Moon",compat:["scorpio","pisces","taurus","virgo"]},
+    {id:"leo",name:"Leo",symbol:"♌",dates:"Jul 23 - Aug 22",element:"Fire",ruler:"Sun",compat:["aries","sagittarius","gemini","libra"]},
+    {id:"virgo",name:"Virgo",symbol:"♍",dates:"Aug 23 - Sep 22",element:"Earth",ruler:"Mercury",compat:["taurus","capricorn","cancer","scorpio"]},
+    {id:"libra",name:"Libra",symbol:"♎",dates:"Sep 23 - Oct 22",element:"Air",ruler:"Venus",compat:["gemini","aquarius","leo","sagittarius"]},
+    {id:"scorpio",name:"Scorpio",symbol:"♏",dates:"Oct 23 - Nov 21",element:"Water",ruler:"Pluto",compat:["cancer","pisces","virgo","capricorn"]},
+    {id:"sagittarius",name:"Sagittarius",symbol:"♐",dates:"Nov 22 - Dec 21",element:"Fire",ruler:"Jupiter",compat:["aries","leo","libra","aquarius"]},
+    {id:"capricorn",name:"Capricorn",symbol:"♑",dates:"Dec 22 - Jan 19",element:"Earth",ruler:"Saturn",compat:["taurus","virgo","scorpio","pisces"]},
+    {id:"aquarius",name:"Aquarius",symbol:"♒",dates:"Jan 20 - Feb 18",element:"Air",ruler:"Uranus",compat:["gemini","libra","aries","sagittarius"]},
+    {id:"pisces",name:"Pisces",symbol:"♓",dates:"Feb 19 - Mar 20",element:"Water",ruler:"Neptune",compat:["cancer","scorpio","taurus","capricorn"]},
+];
+
+const COLORS = ["Red","Orange","Yellow","Green","Blue","Purple","Pink","Gold","Silver","White","Black","Cyan"];
+const DIRECTIONS = ["North","South","East","West","Northeast","Northwest","Southeast","Southwest"];
+
+const OVERALL_TEMPLATES = [
+    "Today brings a fresh wave of energy that encourages you to step out of your comfort zone. Trust your instincts and embrace new opportunities that come your way. The stars favor bold actions and creative thinking.",
+    "The planetary alignment suggests a day of reflection and inner growth. Take time to pause and reassess your goals. Small, deliberate steps will lead to significant progress. Listen to your intuition.",
+    "An exciting day awaits with unexpected twists and turns. Stay flexible and adapt to changing circumstances. Your natural strengths will shine through when you remain authentic and true to yourself.",
+    "Today's cosmic energy supports communication and connection. Reach out to someone you haven't spoken to in a while. Meaningful conversations could open doors you didn't know existed.",
+    "The stars remind you to find balance between work and rest. Don't push yourself too hard today. Taking a break is not a sign of weakness but a strategy for long-term success.",
+    "A day of potential and promise lies ahead. Your determination and focus will be rewarded. Trust in your abilities and don't be afraid to take the lead on an important project.",
+    "Today's energy encourages you to let go of what no longer serves you. Release old patterns and make space for new experiences. Transformation is in the air — embrace it with an open heart.",
+    "The universe conspires to bring you good fortune today. Pay attention to synchronicities and seemingly random encounters. Something wonderful may be closer than you think.",
+];
+
+const LOVE_TEMPLATES = [
+    "In matters of the heart, today calls for honesty and vulnerability. If you're in a relationship, share your true feelings with your partner. Single? An intriguing conversation could spark a new connection.",
+    "Love is in the air, but it requires patience. Don't rush things — let relationships unfold naturally. If there's tension, a heartfelt apology or gesture of kindness can work wonders today.",
+    "Your charm is magnetic today. Use it wisely. Whether attached or single, focus on building genuine connections rather than surface-level attractions. Depth matters more than excitement right now.",
+    "Communication is your superpower in love today. Express your needs clearly and listen to your partner with an open mind. A small romantic gesture will be deeply appreciated.",
+    "If love has felt complicated lately, today brings clarity. Trust your heart's wisdom. Sometimes the right choice isn't the easiest one, but it's the one that brings lasting happiness.",
+    "Romance takes an unexpected turn today. Embrace the surprise — it could lead somewhere beautiful. Couples may discover a new shared interest. Singles should keep an open mind.",
+];
+
+const CAREER_TEMPLATES = [
+    "Professionally, today is about teamwork and collaboration. Don't hesitate to ask for help or delegate tasks. Your colleagues have valuable insights that can elevate your work to the next level.",
+    "A creative idea could revolutionize your approach to work. Don't be afraid to think outside the box and propose innovative solutions. Leadership opportunities may present themselves.",
+    "Focus and discipline are your allies today. Tackle the most challenging task first — you'll find you have the energy and clarity to accomplish more than expected. Recognition is coming.",
+    "Networking pays off today. Attend that meeting, join that call, reach out to that contact. A casual professional conversation could lead to a significant opportunity down the road.",
+    "If you've been considering a career change or new project, today's stars support bold moves. Do your research, trust your skills, and take that first step. The universe rewards courage.",
+    "Pay attention to details today. A small oversight could have bigger consequences than expected. Double-check your work and communicate clearly with stakeholders to avoid misunderstandings.",
+];
+
+const MONEY_TEMPLATES = [
+    "Financially, today favors careful planning over impulsive spending. Review your budget and look for areas where you can save. A small adjustment now will pay dividends later.",
+    "An unexpected financial opportunity may appear today. Evaluate it carefully before committing. Trust your gut — if something seems too good to be true, it probably is.",
+    "Good money management is today's theme. Consider setting aside a portion of your income for savings or investment. Long-term financial security starts with small, consistent habits.",
+    "Today is a favorable day for financial negotiations. Whether asking for a raise or discussing terms, your arguments are well-supported. Be confident and know your worth.",
+    "Avoid unnecessary expenses today. Instead of impulse buying, invest in something that brings lasting value. Quality over quantity applies to financial decisions too.",
+    "Financial clarity comes today. If you've been confused about a money matter, the answer will reveal itself. Trust the process and make decisions based on facts, not emotions.",
+];
+
+const HEALTH_TEMPLATES = [
+    "Your physical energy is strong today, but don't overexert yourself. Balance activity with adequate rest. A short walk or gentle stretching can do wonders for both body and mind.",
+    "Mental wellness takes priority today. Practice mindfulness or meditation to calm a busy mind. Disconnect from screens for a while and reconnect with nature or loved ones.",
+    "Listen to your body today. If you're tired, rest. If you're energetic, channel it into exercise. Hydration and nutritious food will amplify your natural vitality.",
+    "Today's stars highlight the mind-body connection. Emotional stress may manifest physically. Address the root cause rather than just the symptoms. Deep breathing helps.",
+    "A great day to start a new health habit. Whether it's drinking more water, eating cleaner, or exercising regularly, the cosmic energy supports positive lifestyle changes.",
+    "Pace yourself today. You may feel pressure to do everything at once, but moderation is key. Prioritize sleep tonight — your body needs quality rest to recharge.",
+];
+
+function dayOfYear() {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    return Math.floor((now - start) / 86400000);
+}
+
+function seededRandom(seed) {
+    const x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+}
+
+function pick(arr, seed) {
+    return arr[Math.floor(seededRandom(seed) * arr.length)];
+}
+
+function getRating(seed) {
+    return Math.floor(seededRandom(seed) * 3) + 3; // 3-5 stars
+}
+
+function renderStars(n) {
+    return "★".repeat(n) + "☆".repeat(5 - n);
+}
+
+function getLuckyNumber(seed) {
+    return Math.floor(seededRandom(seed) * 99) + 1;
+}
+
+let activeSign = null;
+
+function renderZodiacGrid() {
+    const grid = document.getElementById("zodiacGrid");
+    grid.innerHTML = "";
+    ZODIAC.forEach(z => {
+        const card = document.createElement("div");
+        card.className = "zodiac-card";
+        card.dataset.id = z.id;
+        card.innerHTML = '<div class="zodiac-symbol">' + z.symbol + '</div><div class="zodiac-name">' + z.name + '</div><div class="zodiac-dates">' + z.dates + '</div>';
+        card.onclick = () => showReading(z);
+        grid.appendChild(card);
+    });
+}
+
+function showReading(z) {
+    activeSign = z;
+    document.querySelectorAll(".zodiac-card").forEach(c => c.classList.remove("active"));
+    document.querySelector('[data-id="' + z.id + '"]').classList.add("active");
+
+    const doy = dayOfYear();
+    const baseSeed = doy * 100 + ZODIAC.indexOf(z) * 7 + 13;
+
+    const loveR = getRating(baseSeed + 1);
+    const careerR = getRating(baseSeed + 2);
+    const moneyR = getRating(baseSeed + 3);
+    const healthR = getRating(baseSeed + 4);
+
+    document.getElementById("rSymbol").textContent = z.symbol;
+    document.getElementById("rTitle").textContent = z.name;
+    document.getElementById("rDates").textContent = z.dates + " · " + z.element + " · Ruled by " + z.ruler;
+
+    const today = new Date();
+    document.getElementById("rDate").textContent = today.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+
+    document.getElementById("rLove").innerHTML = '<span class="on">' + "★".repeat(loveR) + '</span><span class="off">' + "☆".repeat(5-loveR) + '</span>';
+    document.getElementById("rCareer").innerHTML = '<span class="on">' + "★".repeat(careerR) + '</span><span class="off">' + "☆".repeat(5-careerR) + '</span>';
+    document.getElementById("rMoney").innerHTML = '<span class="on">' + "★".repeat(moneyR) + '</span><span class="off">' + "☆".repeat(5-moneyR) + '</span>';
+    document.getElementById("rHealth").innerHTML = '<span class="on">' + "★".repeat(healthR) + '</span><span class="off">' + "☆".repeat(5-healthR) + '</span>';
+    document.getElementById("rLoveScore").textContent = loveR + "/5";
+    document.getElementById("rCareerScore").textContent = careerR + "/5";
+    document.getElementById("rMoneyScore").textContent = moneyR + "/5";
+    document.getElementById("rHealthScore").textContent = healthR + "/5";
+
+    document.getElementById("rOverall").textContent = pick(OVERALL_TEMPLATES, baseSeed);
+    document.getElementById("rLoveText").textContent = pick(LOVE_TEMPLATES, baseSeed + 10);
+    document.getElementById("rCareerText").textContent = pick(CAREER_TEMPLATES, baseSeed + 20);
+    document.getElementById("rMoneyText").textContent = pick(MONEY_TEMPLATES, baseSeed + 30);
+    document.getElementById("rHealthText").textContent = pick(HEALTH_TEMPLATES, baseSeed + 40);
+
+    document.getElementById("rNumber").textContent = getLuckyNumber(baseSeed + 50);
+    document.getElementById("rColor").textContent = pick(COLORS, baseSeed + 60);
+    document.getElementById("rDirection").textContent = pick(DIRECTIONS, baseSeed + 70);
+    const matchIdx = Math.floor(seededRandom(baseSeed + 80) * z.compat.length);
+    document.getElementById("rMatch").textContent = ZODIAC.find(x => x.id === z.compat[matchIdx]).symbol + " " + ZODIAC.find(x => x.id === z.compat[matchIdx]).name;
+
+    const reading = document.getElementById("reading");
+    reading.classList.add("show");
+    reading.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function shareReading() {
+    if (!activeSign) return;
+    const text = "♈ " + activeSign.name + " Daily Horoscope — " + document.getElementById("rDate").textContent + "\n\n" +
+        "Overall: " + document.getElementById("rOverall").textContent + "\n\n" +
+        "Love: " + document.getElementById("rLoveScore").textContent + " | Career: " + document.getElementById("rCareerScore").textContent +
+        " | Money: " + document.getElementById("rMoneyScore").textContent + " | Health: " + document.getElementById("rHealthScore").textContent;
+    const url = location.href;
+    if (navigator.share) {
+        navigator.share({ title: activeSign.name + " Daily Horoscope", text: text, url: url }).catch(() => copyText(text + "\n" + url));
+    } else {
+        copyText(text + "\n" + url);
+    }
+}
+
+function copyReading() {
+    if (!activeSign) return;
+    const text = activeSign.name + " Horoscope (" + document.getElementById("rDate").textContent + ")\n" +
+        "Love: " + document.getElementById("rLoveScore").textContent + " | Career: " + document.getElementById("rCareerScore").textContent +
+        " | Money: " + document.getElementById("rMoneyScore").textContent + " | Health: " + document.getElementById("rHealthScore").textContent + "\n\n" +
+        "Overall: " + document.getElementById("rOverall").textContent + "\n\n" +
+        "Love: " + document.getElementById("rLoveText").textContent + "\n\n" +
+        "Career: " + document.getElementById("rCareerText").textContent + "\n\n" +
+        "Lucky Number: " + document.getElementById("rNumber").textContent + " | Color: " + document.getElementById("rColor").textContent;
+    copyText(text);
+}
+
+function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target;
+        const orig = btn.textContent;
+        btn.textContent = "✅ Copied!";
+        setTimeout(() => { btn.textContent = orig; }, 1500);
+    }).catch(() => {});
+}
+
+// Display date
+const today = new Date();
+document.getElementById("dateDisplay").textContent = today.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
+
+renderZodiacGrid();
+
+// Auto-show first sign or detect from birthday
+const saved = localStorage.getItem("horoscope_sign");
+if (saved) {
+    const z = ZODIAC.find(x => x.id === saved);
+    if (z) showReading(z);
+}
+</script>
+</body>
+</html>

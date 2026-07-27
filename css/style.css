@@ -1,0 +1,81 @@
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0b0f;--bg2:#11131a;--card:#161922;--card2:#1a1e28;--border:#232733;--border2:#2d3340;--text:#e8eaf0;--dim:#7a8190;--accent:#fdcb6e;--hover:#ffe082;--green:#2ecc71;--red:#ff3b3b;--gold:#fdcb6e;--purple:#9b59b6;--r:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;overflow-x:hidden}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.75rem 2rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,11,15,.92);backdrop-filter:blur(12px);z-index:50}
+.navbar .brand{font-weight:800;color:var(--text);text-decoration:none;font-size:1.05rem;display:flex;align-items:center;gap:.4rem}
+.navbar .nav-links{display:flex;gap:1rem}
+.navbar .nav-links a{color:var(--dim);text-decoration:none;font-size:.82rem;transition:color .2s;min-height:44px;display:inline-flex;align-items:center}
+.navbar .nav-links a:hover,.navbar .nav-links a.active{color:var(--hover)}
+main{max-width:1040px;margin:0 auto;padding:2.5rem 2rem 3rem}
+h1{font-size:2.2rem;margin-bottom:.4rem;text-align:center;background:linear-gradient(135deg,#fdcb6e,#ffe082,#9b59b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{color:var(--dim);font-size:1rem;margin-bottom:.5rem;text-align:center}
+.date-display{text-align:center;color:var(--accent);font-size:.9rem;margin-bottom:2rem;font-weight:600}
+h2{font-size:1.15rem;margin:1.5rem 0 .6rem;color:var(--hover)}
+p{margin-bottom:.75rem}a{color:var(--hover)}
+ul{margin:0 0 1rem 1.25rem}li{margin-bottom:.4rem}
+
+/* Zodiac grid */
+.zodiac-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.75rem;margin-bottom:2rem}
+.zodiac-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:1.25rem .75rem;text-align:center;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.zodiac-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 8px 24px rgba(253,203,110,.15)}
+.zodiac-card.active{border-color:var(--accent);background:linear-gradient(135deg,rgba(253,203,110,.1),transparent);box-shadow:0 0 0 2px var(--accent)}
+.zodiac-symbol{font-size:2rem;margin-bottom:.3rem;line-height:1}
+.zodiac-name{font-size:.82rem;font-weight:700;color:var(--text)}
+.zodiac-dates{font-size:.65rem;color:var(--dim);margin-top:.15rem}
+
+/* Reading panel */
+.reading{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border2);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem;box-shadow:0 8px 32px rgba(0,0,0,.3);display:none}
+.reading.show{display:block;animation:fade .3s}
+.reading-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border2)}
+.reading-symbol{font-size:3rem;line-height:1}
+.reading-title{font-size:1.5rem;font-weight:800;color:var(--accent)}
+.reading-dates{font-size:.8rem;color:var(--dim)}
+.reading-date{margin-left:auto;text-align:right}
+.reading-date .label{font-size:.7rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em}
+.reading-date .val{font-size:1.1rem;font-weight:700;color:var(--text)}
+
+/* Ratings */
+.ratings{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:1.5rem}
+.rating-card{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:.85rem .5rem;text-align:center}
+.rating-card .label{font-size:.7rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem}
+.rating-card .stars{font-size:1.1rem;letter-spacing:1px}
+.rating-card .score{font-size:.75rem;color:var(--dim);margin-top:.2rem}
+.stars .on{color:var(--gold)}.stars .off{color:var(--border2)}
+
+/* Reading sections */
+.reading-section{margin-bottom:1.25rem}
+.reading-section .section-title{font-size:.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem}
+.reading-section p{color:var(--text);font-size:.92rem;line-height:1.7;margin:0}
+
+/* Lucky info */
+.lucky-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:1rem}
+.lucky-item{background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:.7rem .5rem;text-align:center}
+.lucky-item .label{font-size:.65rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em}
+.lucky-item .value{font-size:.95rem;font-weight:700;color:var(--accent);margin-top:.2rem}
+
+/* Share */
+.share-row{display:flex;gap:.5rem;justify-content:center;margin-top:1.5rem}
+.share-btn{background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:.6rem 1.2rem;font-size:.82rem;color:var(--dim);cursor:pointer;transition:all .15s;font-family:inherit}
+.share-btn:hover{border-color:var(--accent);color:var(--text)}
+
+.stats-footer{text-align:center;margin:1.5rem 0;font-size:.78rem;color:var(--dim)}
+.stats-footer strong{color:var(--hover);font-variant-numeric:tabular-nums}
+.stat-divider{margin:0 .6rem;opacity:.4}
+footer{text-align:center;padding:1.5rem 2rem;color:var(--dim);font-size:.75rem;border-top:1px solid var(--border)}
+footer a{color:var(--hover);text-decoration:none}
+.seo-section{color:var(--dim);font-size:.88rem;margin-top:2.5rem;line-height:1.8}
+.seo-section h2{color:var(--text)}
+
+@keyframes fade{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}
+
+@media(max-width:760px){
+  main{padding:2rem 1rem 3rem}
+  h1{font-size:1.6rem}
+  .navbar{padding:.75rem 1rem}
+  .navbar .nav-links{gap:.6rem}
+  .zodiac-grid{grid-template-columns:repeat(3,1fr)}
+  .ratings{grid-template-columns:repeat(2,1fr)}
+  .lucky-grid{grid-template-columns:repeat(2,1fr)}
+  .reading{padding:1.5rem 1.25rem}
+  .reading-header{flex-wrap:wrap}
+}
