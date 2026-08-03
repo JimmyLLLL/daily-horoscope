@@ -305,10 +305,12 @@ function showReading(z) {
 
     document.getElementById("rSymbol").textContent = z.symbol;
     document.getElementById("rTitle").textContent = z.name;
-    document.getElementById("rDates").textContent = z.dates + " · " + z.element + " · Ruled by " + z.ruler;
+    var _isZH = (navigator.language||'').toLowerCase().startsWith('zh');
+    document.getElementById("rDates").textContent = z.dates + " · " + z.element + " · " + (_isZH?"守护星":"Ruled by ") + z.ruler;
 
     const today = new Date();
-    document.getElementById("rDate").textContent = today.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+    var _locale = (navigator.language||'en').startsWith('zh') ? 'zh-CN' : 'en-US';
+    document.getElementById("rDate").textContent = today.toLocaleDateString(_locale, { month: "long", day: "numeric", year: "numeric" });
 
     document.getElementById("rLove").innerHTML = '<span class="on">' + "★".repeat(loveR) + '</span><span class="off">' + "☆".repeat(5-loveR) + '</span>';
     document.getElementById("rCareer").innerHTML = '<span class="on">' + "★".repeat(careerR) + '</span><span class="off">' + "☆".repeat(5-careerR) + '</span>';
@@ -373,7 +375,8 @@ function copyText(text) {
 
 // Display date
 const today = new Date();
-document.getElementById("dateDisplay").textContent = today.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
+var _pageLocale = (navigator.language||'en').startsWith('zh') ? 'zh-CN' : 'en-US';
+document.getElementById("dateDisplay").textContent = today.toLocaleDateString(_pageLocale, { weekday: "long", month: "long", day: "numeric", year: "numeric" });
 
 renderZodiacGrid();
 
