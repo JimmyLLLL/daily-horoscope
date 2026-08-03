@@ -40,5 +40,35 @@
 </main>
 <footer><p>© 2026 Daily Horoscope · <a href="/">Home</a></p></footer>
 <script src="js/counter.js" defer></script>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||'en').toLowerCase();
+if(!lang.startsWith('zh'))return;
+var ZH={"♈ Daily Horoscope":"♈ 每日星座运势","Horoscope":"星座运势","About":"关于","Privacy":"隐私","Contact":"联系","🏠 Home":"🏠 首页","About Daily Horoscope":"关于每日星座运势","Our free daily horoscope provides personalized astrology forecasts for all 12 zodiac signs. Each day brings fresh readings covering love, career, money, health, lucky numbers, colors, and compatibility. Updated daily at midnight UTC — bookmark this page and check your stars every morning.":"我们的免费每日星座运势为全部 12 个星座提供个性化占星预测。每天更新涵盖爱情、事业、财运、健康、幸运数字、颜色和配对的全新解读。每天 UTC 午夜自动更新 — 收藏本页，每天清晨查看你的星象。","Features":"功能特性","All 12 zodiac signs with daily readings":"全部 12 个星座的每日解读","Star ratings for Love, Career, Money, and Health":"爱情、事业、财运、健康的星级评分","Detailed forecasts for each life area":"各个生活领域的详细预测","Lucky number, color, and direction":"幸运数字、颜色和方向","Best zodiac match of the day":"今日最佳星座配对","Share and copy your horoscope":"分享和复制你的运势","Updates every day automatically":"每天自动更新","100% free, no signup, no download":"100% 免费，无需注册，无需下载","The 12 Zodiac Signs":"12 星座","Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces. Each sign belongs to one of four elements (Fire, Earth, Air, Water) and is ruled by a planet that influences its personality traits and daily forecasts.":"白羊座、金牛座、双子座、巨蟹座、狮子座、处女座、天秤座、天蝎座、射手座、摩羯座、水瓶座和双鱼座。每个星座属于四象（火、土、风、水）之一，并由一颗行星主宰，影响其性格特质和每日预测。","Read Today's Horoscope →":"阅读今日运势 →","👁️ Views":"👁️ 浏览量","👤 Visitors":"👤 访客","© 2026 Daily Horoscope ·":"© 2026 每日星座运势 ·","Home":"首页"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=='SCRIPT'&&node.tagName!=='STYLE'&&node.tagName!=='NOSCRIPT'){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang='zh-CN';
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==='childList'){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==='characterData'){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>
